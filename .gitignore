@@ -1,0 +1,15 @@
+# dati e stato locali: contengono posizioni, saldi, storico del conto. MAI nel repository
+opzioni/data/
+opzioni/logs/
+# ambienti e cache
+.venv/
+__pycache__/
+*.pyc
+# segreti
+*.env
+!*.env.example
+.env*
+flex.env
+# note personali che non devono finire qui
+*.tgz
+*.zip

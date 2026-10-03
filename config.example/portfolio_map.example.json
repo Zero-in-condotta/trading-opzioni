@@ -1,0 +1,72 @@
+{
+ "_commento": "Copiare in opzioni/data/portfolio_map.json e adattare. Ogni GRUPPO e' una operazione (una struttura). Le gambe si identificano per simbolo, scadenza (AAAAMMGG), strike e tipo. Se UNA gamba e' condivisa fra due strutture si indica 'qty' (con segno) in ciascun gruppo, e le quantita' devono sommare alla posizione sul conto. Il gruppo con id 'protezioni_coda' e' trattato come protezione (escluso dalle concentrazioni, dagli stress 'senza protezioni').",
+ "groups": [
+  {
+   "id": "xsp_bull_put_esempio",
+   "nome": "XSP - Bull Put 740/730 (esempio)",
+   "note": "Bucket A, core",
+   "legs": [
+    {
+     "symbol": "XSP",
+     "expiry": "20261120",
+     "strike": 730.0,
+     "right": "P"
+    },
+    {
+     "symbol": "XSP",
+     "expiry": "20261120",
+     "strike": 740.0,
+     "right": "P"
+    }
+   ]
+  },
+  {
+   "id": "estx50_condor_esempio",
+   "nome": "ESTX50 - Iron Condor 5800/5900-6500/6600 (esempio)",
+   "note": "gamba 5900 condivisa: vedi qty",
+   "legs": [
+    {
+     "symbol": "ESTX50",
+     "expiry": "20261120",
+     "strike": 5800.0,
+     "right": "P",
+     "qty": 1.0
+    },
+    {
+     "symbol": "ESTX50",
+     "expiry": "20261120",
+     "strike": 5900.0,
+     "right": "P",
+     "qty": -1.0
+    },
+    {
+     "symbol": "ESTX50",
+     "expiry": "20261120",
+     "strike": 6500.0,
+     "right": "C",
+     "qty": -1.0
+    },
+    {
+     "symbol": "ESTX50",
+     "expiry": "20261120",
+     "strike": 6600.0,
+     "right": "C",
+     "qty": 1.0
+    }
+   ]
+  },
+  {
+   "id": "protezioni_coda",
+   "nome": "Protezioni di coda (Dic) (esempio)",
+   "note": "Bucket C: put OTM lunghe sull'indice",
+   "legs": [
+    {
+     "symbol": "XSP",
+     "expiry": "20261218",
+     "strike": 630.0,
+     "right": "P"
+    }
+   ]
+  }
+ ]
+}

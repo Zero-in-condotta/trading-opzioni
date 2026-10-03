@@ -1,0 +1,10 @@
+[Unit]
+Description=Ricerca programmata delle occasioni nei giorni di mercato alle 16:00
+
+[Timer]
+OnCalendar=Mon..Fri 16:00
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

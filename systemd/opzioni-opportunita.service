@@ -1,0 +1,14 @@
+[Unit]
+Description=Ricerca programmata delle occasioni a rischio definito su ESTX50 e XSP (sola lettura)
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=oneshot
+WorkingDirectory=@REPO@/opzioni
+Environment=PATH=%h/.local/bin:/usr/bin:/bin
+ExecStart=@UV@ run scan_vrp.py --sym ESTX50 XSP --dte 25 85 --json data/opportunita.json
+TimeoutStartSec=2400
+# se TWS non risponde riprova dopo 3 minuti, al massimo 3 volte
+Restart=on-failure
+RestartSec=180

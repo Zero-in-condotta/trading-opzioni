@@ -1,0 +1,8 @@
+[Unit]
+Description=Aggiorna dashboard.html del portafoglio (sola lettura)
+
+[Service]
+Type=oneshot
+WorkingDirectory=@REPO@/opzioni
+Environment=PATH=%h/.local/bin:/usr/bin:/bin
+ExecStart=@UV@ run dashboard.py

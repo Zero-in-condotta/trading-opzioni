@@ -1,0 +1,14 @@
+{
+ "_commento": "Copiare in opzioni/data/price_rules.json. Regole di PRESA DI PROFITTO o di uscita pianificata a un livello di prezzo, MAI stop loss (regola permanente del progetto: le perdite si gestiscono con aggiustamenti). Avviso solo in dashboard.",
+ "rules": [
+  {
+   "symbol": "AAA",
+   "above": 100.0,
+   "since": "2026-01-01",
+   "action": "CHIUDERE TUTTE LE POSIZIONI AAA (esempio di regola decisa dall'utente)",
+   "orders": [
+    "descrizione a parole dell'ordine combo da inserire a mano"
+   ]
+  }
+ ]
+}

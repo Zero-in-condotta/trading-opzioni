@@ -1,0 +1,15 @@
+[Unit]
+Description=Costruttore di strategie e server locale delle occasioni (127.0.0.1:8770, sola lettura)
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=@REPO@/opzioni
+Environment=PATH=%h/.local/bin:/usr/bin:/bin
+ExecStart=@UV@ run chain_builder.py --http-port 8770
+# Se TWS non e' ancora aperto la connessione fallisce: si riprova finche' non c'e'.
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=default.target
